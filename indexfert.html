@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+    <head>
+       <title>A GST calci</title>
+  <script src="scriptfert.js"></script>
+  <link rel="stylesheet" href="stylefert.css">
+ <meta name="viewport" content="witdh=device-width,initial-scale=1.0"> 
+    </head>
+    <body>
+        <h1 style="color:green; background-color:skyblue;"><center>FERTILIZERS GST BILLING CALACULATOR</center></h1>
+        <center><h3 style="color: red;">* price including gst will be given in price section</h3></center>
+        <form action="billfert.html">  
+        <label style="color: rebeccapurple;" for="products">ITEM 1</label>
+           <select class="productsname" name="products1" id="products1">
+                <option id="select1" value="100">select....</option>
+                <option id="urea" value="0">urea</option>          
+                <option id="DAP" value="1">D.A.P</option>
+                <option id="20200013" value="2">20:20:00:13</option>
+                <option id="102626" value="3">10:26:26</option>
+                <option id="16200013" value="4">16:20:00:13</option>
+                <option id="143514" value="5">14:35:14</option>
+                <option id="282800" value="6">28:28:00</option>
+                <option id="151515" value="7">15:15:15</option>
+                <option id="161616" value="8">16:16:16</option>
+                <option id="SSP" value="9">S.S.P</option>
+                <option id="MOP" value="10">M.O.P</option>
+                <option id="none"value="11">None</option>
+            </select>&nbsp;&nbsp;&nbsp;
+            <input id="firstcost" class="unitprice" placeholder="price" >&nbsp;&nbsp;&nbsp;
+    <input type="number" class="quantity" placeholder="quantity" id="productscount1">
+   <br/><br/><br/>
+
+           <label style="color: rebeccapurple;" for="products">ITEM 2</label>
+        <select class="productsname" name="products2" id="products2">
+            <option id="select2" value="100">select....</option>
+            <option id="urea" value="0">urea</option>          
+            <option id="DAP" value="1">D.A.P</option>
+            <option id="20200013" value="2">20:20:00:13</option>
+            <option id="102626" value="3">10:26:26</option>
+            <option id="16200013" value="4">16:20:00:13</option>
+            <option id="143514" value="5">14:35:14</option>
+            <option id="282800" value="6">28:28:00</option>
+            <option id="151515" value="7">15:15:15</option>
+            <option id="161616" value="8">16:16:16</option>
+            <option id="SSP" value="9">S.S.P</option>
+            <option id="MOP" value="10">M.O.P</option>
+            <option id="none"value="11">None</option>
+        </select>&nbsp;&nbsp;&nbsp;
+            <input id="secondcost" class="unitprice" placeholder="price"  >&nbsp;&nbsp;&nbsp;
+           <input type="number" class="quantity" placeholder="quantity" id="productscount2">
+           <br/><br/><br/>
+           <label style="color: rebeccapurple;" for="products">ITEM 3</label>
+        <select class="productsname" name="products3" id="products3">
+            <option id="select3" value="100">select....</option>
+            <option id="urea" value="0">urea</option>          
+            <option id="DAP" value="1">D.A.P</option>
+            <option id="20200013" value="2">20:20:00:13</option>
+            <option id="102626" value="3">10:26:26</option>
+            <option id="16200013" value="4">16:20:00:13</option>
+            <option id="143514" value="5">14:35:14</option>
+            <option id="282800" value="6">28:28:00</option>
+            <option id="151515" value="7">15:15:15</option>
+            <option id="161616" value="8">16:16:16</option>
+            <option id="SSP" value="9">S.S.P</option>
+            <option id="MOP" value="10">M.O.P</option>
+            <option id="none"value="11">None</option>
+        </select>&nbsp;&nbsp;&nbsp;
+           <input class="unitprice" id="thirdcost" placeholder="price" >&nbsp;&nbsp;&nbsp;
+           <input type="number" class="quantity" placeholder="quantity" id="productscount3">
+        </br> </br> </br> 
+          <label style="color: rebeccapurple;"> ITEM 4</label>
+          <input id="other" class="productsname1" placeholder="product name">&nbsp;&nbsp;&nbsp;
+          <input id="othercost"class="unitprice" placeholder="price">&nbsp;&nbsp;&nbsp;
+          <input type="number"class="quantity" placeholder="quantity" id="othercount">
+        </br></br> </br>
+        
+        <center>   <input class="caluclate" type="submit" style="background-color: springgreen;color: rebeccapurple;" value="CALCULATE" onclick="add();"></input></center>
+        </form>
+        <h2><marquee style="background-color: cadetblue; color: chartreuse;"><a href="index.html">Click here for fert bill system</a></marquee></h2>
+      </br></br> </br>  </br></br> </br>
+           <footer>
+               By Puvvadi Deekshith
+          </footer>
+    </body>
+</html>
