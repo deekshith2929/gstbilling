@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <head>
+       <title>A GENERAL GST calci</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+ <meta name="viewport" content="witdh=device-width,initial-scale=1.0"> 
+    </head>
+    
+    <body>
+        <h1 style="color:green; background-color:skyblue;"><center>GST BILLING CALACULATOR GENERAL</center></h1>
+        <center><h3 style="color: red;">* price including gst will be given in price section</h3></center>
+        <form action="bill.html">  
+        <label style="color: rebeccapurple;" for="products">ITEM 1</label>
+           <select class="productsname" name="products1" id="products1">
+                <option id="select1" value="100">select....</option>
+                <option id="item1" value="0">item1</option>          
+            </select>&nbsp;&nbsp;&nbsp;
+            <input id="firstcost" class="unitprice" placeholder="price" >&nbsp;&nbsp;&nbsp;
+    <input type="number" class="quantity" placeholder="quantity" id="productscount1">
+   <br/><br/><br/>
+
+           <label style="color: rebeccapurple;" for="products">ITEM 2</label>
+        <select class="productsname" name="products2" id="products2">
+            <option id="select2" value="100">select....</option>
+            <option id="item2" value="0">item2</option>          
+        </select>&nbsp;&nbsp;&nbsp;
+            <input id="secondcost" class="unitprice" placeholder="price"  >&nbsp;&nbsp;&nbsp;
+           <input type="number" class="quantity" placeholder="quantity" id="productscount2">
+           <br/><br/><br/>
+           <label style="color: rebeccapurple;" for="products">ITEM 3</label>
+        <select class="productsname" name="products3" id="products3">
+            <option id="select3" value="100">select....</option>
+            <option id="item3" value="0">item3</option>          
+        </select>&nbsp;&nbsp;&nbsp;
+           <input class="unitprice" id="thirdcost" placeholder="price" >&nbsp;&nbsp;&nbsp;
+           <input type="number" class="quantity" placeholder="quantity" id="productscount3">
+        </br> </br> </br> 
+          <label style="color: rebeccapurple;"> ITEM 4</label>
+          <input id="other" class="productsname1" placeholder="product name">&nbsp;&nbsp;&nbsp;
+          <input id="othercost"class="unitprice" placeholder="price">&nbsp;&nbsp;&nbsp;
+          <input type="number"class="quantity" placeholder="quantity" id="othercount">
+        </br></br> </br>
+        <label style="color: rebeccapurple;"> GST %</label>
+        <select class="gstclass" name="gst" id="gstid">
+            <option id="0gst" value="0">0%</option>
+            <option id="5gst" value="5">5%</option>
+            <option id="12gst" value="12">12%</option>
+            <option id="18gst" value="18">18%</option>
+            <option id="28gst" value="28">28%</option>
+        </select>
+        
+        <center>   <input class="caluclate" type="submit" style="background-color: springgreen;color: rebeccapurple;" value="CALCULATE" onclick="add();"></input></center>
+        </form><br/><br/>
+        <h2><marquee style="background-color: cadetblue; color: chartreuse;"><a href="indexfert.html">Click here for fert bill system</a></marquee></h2>
+      </br></br> </br>  </br></br> </br>
+           <footer>
+               By Puvvadi Deekshith
+          </footer>
+    </body>
+</html>
