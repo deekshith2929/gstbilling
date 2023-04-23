@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>report</title>
+    <script src="scriptstockfert.js"></script>
+</head>
+<style>
+    table ,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    td{ 
+        text-align: center;
+    }
+</style>
+<body>
+     <center>
+    <br><br>
+        <table border="1">
+        <tr>
+            <th colspan="7" >NATARAJA FERTILIZERS<br>
+            AGL NO:CTR/33/ADA/FR/2018/22565
+            </th>
+        </tr>
+        <tr>
+            <th colspan="7" >STOCK REPORT OF FERTILIZERS
+            </th>
+        </tr>
+        <tr>
+            <th colspan="7" >DATE : <span id="fromdate"></span> TO <span id="todate"></span>
+            </th>
+        </tr>
+        <tr>
+        <th>S.No</th>
+        <th>Product Name</th>
+        <th>O/p balance</th>
+        <th>Recepits</th>
+        <th>Total</th>
+        <th>Sales</th>       
+        <th>Closing Balance</th>
+        </tr>
+        <tr id="tr1">
+        <td><span id="sno1"></span></td>
+        <td><span id="pname1"></span></td>
+        <td><span id="oprep1"></span></td>
+        <td><span id="recprep1"></span></td>
+        <td><span id="totalrep1"></span></td>
+        <td><span id="salesrep1"></span></td>
+        <td><span id="closbrep1"></span></td>
+        </tr>
+        <tr id="tr2">
+            <td><span id="sno2"></span></td>
+            <td><span id="pname2"></span></td>
+            <td><span id="oprep2"></span></td>
+            <td><span id="recprep2"></span></td>
+            <td><span id="totalrep2"></span></td>
+            <td><span id="salesrep2"></span></td>
+            <td><span id="closbrep2"></span></td>
+        </tr>
+        <tr id="tr3">
+            <td><span id="sno3"></span></td>
+            <td><span id="pname3"></span></td>
+            <td><span id="oprep3"></span></td>
+            <td><span id="recprep3"></span></td>
+            <td><span id="totalrep3"></span></td>
+            <td><span id="salesrep3"></span></td>
+            <td><span id="closbrep3"></span></td>
+        </tr> 
+        <tr id="tr4">
+            <td><span id="sno4"></span></td>
+            <td><span id="pname4"></span></td>
+            <td><span id="oprep4"></span></td>
+            <td><span id="recprep4"></span></td>
+            <td><span id="totalrep4"></span></td>
+            <td><span id="salesrep4"></span></td>
+            <td><span id="closbrep4"></span></td>
+        </tr> 
+        <tr id="tr5">
+            <td><span id="sno5"></span></td>
+            <td><span id="pname5"></span></td>
+            <td><span id="oprep5"></span></td>
+            <td><span id="recprep5"></span></td>
+            <td><span id="totalrep5"></span></td>
+            <td><span id="salesrep5"></span></td>
+            <td><span id="closbrep5"></span></td>
+        </tr> 
+        <tr id="tr6">
+            <td><span id="sno6"></span></td>
+            <td><span id="pname6"></span></td>
+            <td><span id="oprep6"></span></td>
+            <td><span id="recprep6"></span></td>
+            <td><span id="totalrep6"></span></td>
+            <td><span id="salesrep6"></span></td>
+            <td><span id="closbrep6"></span></td>
+        </tr> 
+        <tr id="tr7">
+            <td><span id="sno7"></span></td>
+            <td><span id="pname7"></span></td>
+            <td><span id="oprep7"></span></td>
+            <td><span id="recprep7"></span></td>
+            <td><span id="totalrep7"></span></td>
+            <td><span id="salesrep7"></span></td>
+            <td><span id="closbrep7"></span></td>
+        </tr> 
+        <tr id="tr8">
+            <td><span id="sno8"></span></td>
+            <td><span id="pname8"></span></td>
+            <td><span id="oprep8"></span></td>
+            <td><span id="recprep8"></span></td>
+            <td><span id="totalrep8"></span></td>
+            <td><span id="salesrep8"></span></td>
+            <td><span id="closbrep8"></span></td>
+        </tr> 
+        <tr id="tr9">
+            <td><span id="sno9"></span></td>
+            <td><span id="pname9"></span></td>
+            <td><span id="oprep9"></span></td>
+            <td><span id="recprep9"></span></td>
+            <td><span id="totalrep9"></span></td>
+            <td><span id="salesrep9"></span></td>
+            <td><span id="closbrep9"></span></td>
+        </tr> 
+        <tr id="tr10">
+            <td><span id="sno10"></span></td>
+            <td><span id="pname10"></span></td>
+            <td><span id="oprep10"></span></td>
+            <td><span id="recprep10"></span></td>
+            <td><span id="totalrep10"></span></td>
+            <td><span id="salesrep10"></span></td>
+            <td><span id="closbrep10"></span></td>
+        </tr> 
+        <tr id="tr11">
+            <td><span id="sno11"></span></td>
+            <td><span id="pname11"></span></td>
+            <td><span id="oprep11"></span></td>
+            <td><span id="recprep11"></span></td>
+            <td><span id="totalrep11"></span></td>
+            <td><span id="salesrep11"></span></td>
+            <td><span id="closbrep11"></span></td>
+        </tr> 
+        <tr id="tr12">
+            <td><span id="sno12"></span></td>
+            <td><span id="pname12"></span></td>
+            <td><span id="oprep12"></span></td>
+            <td><span id="recprep12"></span></td>
+            <td><span id="totalrep12"></span></td>
+            <td><span id="salesrep12"></span></td>
+            <td><span id="closbrep12"></span></td>
+        </tr> 
+        <tr id="tr13">
+            <td><span id="sno13"></span></td>
+            <td><span id="pname13"></span></td>
+            <td><span id="oprep13"></span></td>
+            <td><span id="recprep13"></span></td>
+            <td><span id="totalrep13"></span></td>
+            <td><span id="salesrep13"></span></td>
+            <td><span id="closbrep13"></span></td>
+        </tr> 
+        <tr id="tr14">
+            <td><span id="sno14"></span></td>
+            <td><span id="pname14"></span></td>
+            <td><span id="oprep14"></span></td>
+            <td><span id="recprep14"></span></td>
+            <td><span id="totalrep14"></span></td>
+            <td><span id="salesrep14"></span></td>
+            <td><span id="closbrep14"></span></td>
+        </tr> 
+        <tr id="tr15">
+            <td><span id="sno15"></span></td>
+            <td><span id="pname15"></span></td>
+            <td><span id="oprep15"></span></td>
+            <td><span id="recprep15"></span></td>
+            <td><span id="totalrep15"></span></td>
+            <td><span id="salesrep15"></span></td>
+            <td><span id="closbrep15"></span></td>
+        </tr> 
+        <tr id="tr16">
+            <td><span id="sno16"></span></td>
+            <td><span id="pname16"></span></td>
+            <td><span id="oprep16"></span></td>
+            <td><span id="recprep16"></span></td>
+            <td><span id="totalrep16"></span></td>
+            <td><span id="salesrep16"></span></td>
+            <td><span id="closbrep16"></span></td>
+        </tr> 
+        <tr id="tr17">
+            <td><span id="sno17"></span></td>
+            <td><span id="pname17"></span></td>
+            <td><span id="oprep17"></span></td>
+            <td><span id="recprep17"></span></td>
+            <td><span id="totalrep17"></span></td>
+            <td><span id="salesrep17"></span></td>
+            <td><span id="closbrep17"></span></td>
+        </tr> 
+        <tr id="tr18">
+            <td><span id="sno18"></span></td>
+            <td><span id="pname18"></span></td>
+            <td><span id="oprep18"></span></td>
+            <td><span id="recprep18"></span></td>
+            <td><span id="totalrep18"></span></td>
+            <td><span id="salesrep18"></span></td>
+            <td><span id="closbrep18"></span></td>
+        </tr> 
+        <tr id="tr19">
+            <td><span id="sno19"></span></td>
+            <td><span id="pname19"></span></td>
+            <td><span id="oprep19"></span></td>
+            <td><span id="recprep19"></span></td>
+            <td><span id="totalrep19"></span></td>
+            <td><span id="salesrep19"></span></td>
+            <td><span id="closbrep19"></span></td>
+        </tr> 
+        <tr id="tr20">
+            <td><span id="sno20"></span></td>
+            <td><span id="pname20"></span></td>
+            <td><span id="oprep20"></span></td>
+            <td><span id="recprep20"></span></td>
+            <td><span id="totalrep20"></span></td>
+            <td><span id="salesrep20"></span></td>
+            <td><span id="closbrep20"></span></td>
+        </tr> 
+        </table>
+        <br>
+          <button onclick="window.print()">Print</button>
+          </center>
+    </body>
+
+    <script>
+        const frmdate=new Date(localStorage.getItem("fromdate"));
+        const tdate=new Date(localStorage.getItem("todate"));
+        document.getElementById("fromdate").innerHTML=frmdate.toLocaleString().split(',')[0];
+        document.getElementById("todate").innerHTML=tdate.toLocaleString().split(',')[0];
+        for(var i=1;i<21;i++){
+        var product=Number(localStorage.getItem("products"+i));
+        var producttext=localStorage.getItem("productstext"+i);
+        switch(product) {
+        case 0:  document.getElementById("tr"+i).style.display="none";break; 
+        case 1:  document.getElementById("pname"+i).innerHTML=  "Urea";break;  
+        case 2:  document.getElementById("pname"+i).innerHTML=  "20:20:00:13";break;  
+        case 3:  document.getElementById("pname"+i).innerHTML=  "16:20:00:13";break;  
+        case 4:  document.getElementById("pname"+i).innerHTML=  "15:15:15";break;  
+        case 5:  document.getElementById("pname"+i).innerHTML=  "10:26:26";break;  
+        case 6:  document.getElementById("pname"+i).innerHTML=  "14:35:14";break;  
+        case 7:  document.getElementById("pname"+i).innerHTML=  "D.A.P";break;  
+        case 8:  document.getElementById("pname"+i).innerHTML=  "C.M.S";break;  
+        case 9:  document.getElementById("pname"+i).innerHTML=  "S.S.P";break;  
+        case 10:  document.getElementById("pname"+i).innerHTML=  "S.S.P Granules";break;  
+        case 11:  document.getElementById("pname"+i).innerHTML=  "CIL K-Rich";break;  
+        case 999 :   document.getElementById("pname"+i).innerHTML=  producttext;break;    
+        }
+        document.getElementById("sno"+i).innerHTML=i;
+        var op=Number(localStorage.getItem("opbalance"+i));
+        op = (op==='' || op==null || op==0 || isNaN(op)) ? op= '-' : parseFloat(op).toFixed(3);
+        document.getElementById("oprep"+i).innerHTML=op;
+        var recp=Number(localStorage.getItem("recp"+i));
+        recp = (recp==='' || recp==null || recp==0 || isNaN(recp)) ? recp= '-' : parseFloat(recp).toFixed(3);
+        document.getElementById("recprep"+i).innerHTML=recp;
+        var total=Number(op)+Number(recp);
+        total = (total==='' || total==null || isNaN(total)) ? total= '-' : parseFloat(total).toFixed(3);
+        document.getElementById("totalrep"+i).innerHTML=total;
+        var sales=Number(localStorage.getItem("sales"+i));
+        sales = (sales==='' || sales==null || sales==0 || isNaN(sales)) ? sales= '-' : parseFloat(sales).toFixed(3);
+        document.getElementById("salesrep"+i).innerHTML=sales;
+        sales = sales === '-' ?  0 : sales; 
+        var clsb=Number(total)-Number(sales);
+        clsb = (clsb==='' || clsb==null || isNaN(clsb) || clsb===0) ? clsb= '-' : parseFloat(clsb).toFixed(3);
+        if(clsb<0)
+        {
+            document.getElementById("closbrep"+i).innerHTML= 'Err'; 
+            document.getElementById("closbrep"+i).style.color='red';
+        }
+        else
+        {
+        document.getElementById("closbrep"+i).innerHTML= clsb;    
+        }   
+     }
+    </script>
