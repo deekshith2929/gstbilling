@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockreport</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="scriptstockfert.js"></script>
+    <style>
+      body,input,select{
+        background-color: lightyellow;
+      }
+      input,select{
+    width:100px;
+    background-color: lightyellow;
+    border-radius: 20px;
+  }
+  footer {
+    text-align: center;
+    background-color: DarkSalmon;
+    color: white;
+
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+  }
+    </style>
+</head>
+<body>
+  <center><h1 style="color: blue;">Fertilizers Stock Report</h1></center>  
+    <form id="Items" method="post" action="reportfert.html">
+      From<input type="date" id="fromdate"> To <input type="date" id="todate"><br>
+     <!--   <label class="ItemLabel">Item 1</label>
+        <select class="productsname" name="Item1" id="products1">
+          <option id="none" value="0">Select..</option> 
+          <option id="ap" value="1">Acetamiprid 20 % SP</option>          
+          <option id="car" value="2">Carbendazim 50% WP</option>
+          <option id="text" value="999">text...</option>
+          <option id="none"value="">None</option>
+      </select>
+      <input type="number" size="3" step="0.001" id="opbalance1" placeholder="O/p balance" >&nbsp;&nbsp;&nbsp;
+      <input type="number" step="0.001" id="recp1" placeholder="Receipts">&nbsp;&nbsp;&nbsp; 
+      <input type="number" step="0.001" id="sales1" placeholder="Sales">&nbsp;&nbsp;&nbsp;
+      <input type="text"  id="productstext1" placeholder="product">&nbsp;&nbsp;&nbsp;
+      <br>
+      <label class="ItemLabel">Item 2</label>
+      <select class="productsname" name="Item3" id="products2">
+        <option id="none" value="0">Select..</option>
+        <option id="ap" value="1">Acetamiprid 20 % SP</option>          
+        <option id="car" value="2">Carbendazim 50% WP</option>
+        <option id="none"value="11">None</option>
+    </select>
+    <input type="number" step="0.001" id="opbalance2" placeholder="O/p balance" >&nbsp;&nbsp;&nbsp;
+    <input type="number" step="0.001" id="recp2" placeholder="Receipts">&nbsp;&nbsp;&nbsp; 
+    <input type="number" step="0.001" id="sales2" placeholder="Sales">&nbsp;&nbsp;&nbsp;<br>
+    <label class="ItemLabel">Item 3</label>
+    <select class="productsname" name="Item3" id="products3">
+      <option id="none" value="0">Select..</option>
+      <option id="ap" value="1">Acetamiprid 20 % SP</option>          
+      <option id="car" value="2">Carbendazim 50% WP</option>
+      <option id="none"value="11">None</option>
+  </select>
+  <input type="number" step="0.001" id="opbalance3" placeholder="O/p balance" >&nbsp;&nbsp;&nbsp;
+  <input type="number" step="0.001" id="recp3" placeholder="Receipts">&nbsp;&nbsp;&nbsp; 
+  <input type="number" step="0.001" id="sales3" placeholder="Sales">&nbsp;&nbsp;&nbsp; -->
+  <center><br><input type="submit" name="submitvalues" value="Submit" onclick=calculate()></center>
+     </form>
+     
+</body>
+<script>
+  function myFunction() {
+var x = document.getElementById("products1").value;
+document.getElementById("producttext").value = x;
+  }
+    for (var i=1;i<21;i++){
+      if(i<10){
+        document.body.innerHTML +=   '  <label class="ItemLabel">'+i+'&nbsp;&nbsp;</label>&nbsp;&nbsp;&nbsp ';
+      }
+      else{
+        document.body.innerHTML +=   '  <label class="ItemLabel">'+i+'</label>&nbsp;&nbsp;&nbsp ';
+      }
+        document.body.innerHTML +=                    ' <select class="productsname" name="Item'+i+'" id="products'+i+'">'+
+                            '<option id="none" value="0">Select..</option>'+
+                            '<option id="ap" value="1">Urea</option>   '+       
+                            '<option id="car" value="2">20:20:00:13</option>'+
+                            '<option id="car" value="3">16:20:00:13'+
+                            '<option id="car" value="4">15:15:15</option>'+
+                            '<option id="car" value="5">10:26:26</option>'+
+                            '<option id="car" value="6">14:35:14</option>'+
+                            '<option id="car" value="7">D.A.P</option>'+
+                            '<option id="car" value="8">C.M.S</option>'+
+                            '<option id="car" value="9">S.S.P</option>'+
+                            '<option id="car" value="10">S.S.P(Gr)</option>'+
+                            '<option id="car" value="11">CIL-K-Rich</option>'+
+                            '<option id="text" value="999">text...</option>'+
+                            '<option id="none"value="0">None</option>'+
+                            '</select> '+
+                            '<input type="number" step="0.001" id="opbalance'+i+'" placeholder="O/p balance" >&nbsp;&nbsp;&nbsp;'+
+                            '<input type="number" step="0.001" id="recp'+i+'" placeholder="Receipts">&nbsp;&nbsp;&nbsp; '+
+                            '<input type="number" step="0.001" id="sales'+i+'" placeholder="Sales">&nbsp;&nbsp;&nbsp;'+
+                            '<input type="text"  id="productstext'+i+'" placeholder="productname">&nbsp;&nbsp;&nbsp<br>';
+                           
+    }
+    document.body.innerHTML +=  '</br></br></br><footer> By Puvvadi Deekshith</footer>';
+</script>
+</html>
