@@ -37,7 +37,7 @@
 </head>
 <body>
   <center><h1 style="color: blue;">Pesticide Stock Report</h1></center>  
-    <form id="Items" method="post" action="reportpest.html">
+    <form  action="reportpest.html">
       From<input type="date" id="fromdate"> To <input type="date" id="todate"><br>
   <center><br><button type="submit" name="submitvalues" value="Submit" onclick=calculate()>Submit</button><br/><br/></center>
      </form>
@@ -57,44 +57,46 @@ document.getElementById("producttext").value = x;
       }
         document.body.innerHTML +=                    ' <select class="productsname" name="Item'+i+'" id="products'+i+'">'+
                             '<option id="none" value="0">Select..</option>'+
-                            '<option id="drp" value="1">Acetamiprid20%SP</option>   '+    
-                            '<option id="drp" value="2">Acephate75%SP'+   
-                            '<option id="drp" value="2">Alpha 10%</option>'+
-                            '<option id="drp" value="3">Azaxy+Tebuconazole(Custodia)</option>'+
-                            '<option id="drp" value="4">Bifenthrin10%EC</option>'+
-                            '<option id="drp" value="5">Boscalid+Pyraclostribn(Rainbow)</option>'+
-                            '<option id="drp" value="6">Buprofezin+Acephate(Unione)</option>'+
-                            '<option id="drp" value="7">Carbendazim50%WP</option>'+
-                            '<option id="drp" value="8">Carbendazim+M45(Saaf)</option>'+
-                            '<option id="drp" value="9">Cartap50%SP</option>'+
-                            '<option id="drp" value="10">Cartap75%SP</option>'+
-                            '<option id="drp" value="11">Chloro20%EC</option>'+
-                            '<option id="drp" value="12">Chloro50%EC</option>'+
-                            '<option id="drp" value="13">Chloro+Cyper(Chandika)</option>'+
-                            '<option id="drp" value="14">Chloro+Cyper(Chandika)</option>'+
-                            '<option id="drp" value="15">Chlorothalonil75%WP</option>'+
-                            '<option id="drp" value="16">Copperoxychloride(Biltox)</option>'+
-                            '<option id="drp" value="17">Cymoxanil+M45</option>'+
-                            '<option id="drp" value="18">Deltamethrin11%EC</option>'+
-                            '<option id="drp" value="19">Difenoconazole25%EC</option>'+
-                            '<option id="drp" value="20">Difenocanzole+M45(Dimoxa)</option>'+
-                            '<option id="drp" value="21">Difenthurion50%WP</option>'+
-                            '<option id="drp" value="22">Dinotefuran20%SG(Token)</option>'+
-                            '<option id="drp" value="23">EmamcetinBenzoate5%SG</option>'+
-                            '<option id="drp" value="24">Fenpyroximate5%EC(Akio)</option>'+
-                            '<option id="drp" value="25">Fipronil5%SC</option>'+
-                            '<option id="drp" value="24">Fipronil40+Imidia40%</option>'+
-                            '<option id="drp" value="25">Fipronil80%WG(Jump)</option>'+
-                            '<option id="drp" value="26">Flubendiamide20%WG(Katana)</option>'+
-                            '<option id="drp" value="27">GiberallicAcid%SL</option>'+
-                            '<option id="drp" value="28">Gibreallicpowder</option>'+
-                            '<option id="drp" value="29">HalosulfronMethyl75%WG(Sempra)</option>'+      
-                            '<option id="drp" value="30">Hexaconazle5%SC</option>'+   
-                            '<option id="drp" value="31">Hexaconazle+Zineb(Avatar)</option>'+   
-                            '<option id="drp" value="32">Imidia17.8%SL</option>'+      
-                            '<option id="drp" value="32">Imida30.5%SC</option>'+  
-                            '<option id="drp" value="33">Imidia70%WG</option>'+  
-                            '<option id="drp" value="34">Indoxcarb14.5SC(Kento)</option>'+       
+                            '<option id="drp" value="ACTP">Acetamiprid20%SP</option>   '+    
+                            '<option id="drp" value="ACEP">Acephate75%SP'+   
+                            '<option id="drp" value="ALPH">Alpha 10%</option>'+
+                            '<option id="drp" value="DIAZ">Azaxy+Difencoanzle(Diazo-Top)</option>'+
+                            '<option id="drp" value="CUST">Azaxy+Tebuconazole(Custodia)</option>'+
+                            '<option id="drp" value="BIFE">Bifenthrin10%EC</option>'+
+                            '<option id="drp" value="RINB">Boscalid+Pyraclostribn(Rainbow)</option>'+
+                            '<option id="drp" value="UNIN">Buprofezin+Acephate(Unione)</option>'+
+                            '<option id="drp" value="CARB">Carbendazim50%WP</option>'+
+                            '<option id="drp" value="SAAF">Carbendazim+M45(Saaf)</option>'+
+                            '<option id="drp" value="CRP5">Cartap50%SP</option>'+
+                            '<option id="drp" value="CRP7">Cartap75%SP</option>'+
+                            '<option id="drp" value="CLR2">Chloro20%EC</option>'+
+                            '<option id="drp" value="CLR5">Chloro50%EC</option>'+
+                            '<option id="drp" value="CCYP">Chloro+Cyper(Chandika)</option>'+
+                            '<option id="drp" value="CHLR">Chlorothalonil75%WP(Willonyl)</option>'+
+                            '<option id="drp" value="COCC">Copperoxychloride(Biltox)</option>'+
+                            '<option id="drp" value="CYM4">Cymoxanil+M45</option>'+
+                            '<option id="drp" value="CYPR">Cypermethin25%EC</option>'+
+                            '<option id="drp" value="DELT">Deltamethrin11%EC</option>'+
+                            '<option id="drp" value="SCRO">Difenoconazole25%EC(Score)</option>'+
+                            '<option id="drp" value="DIMO">Difenocanzole+M45(Dimoxa)</option>'+
+                            '<option id="drp" value="WISH">Difenthurion50%WP(WISHH)</option>'+
+                            '<option id="drp" value="TOKE">Dinotefuran20%SG(Token)</option>'+
+                            '<option id="drp" value="EMAT">EmamcetinBenzoate5%SG</option>'+
+                            '<option id="drp" value="AKIO">Fenpyroximate5%EC(Akio)</option>'+
+                            '<option id="drp" value="FIPR">Fipronil5%SC</option>'+
+                            '<option id="drp" value="FIPI">Fipronil40+Imidia40%(Yuvan)</option>'+
+                            '<option id="drp" value="JUMP">Fipronil80%WG(Jump)</option>'+
+                            '<option id="drp" value="KATA">Flubendiamide20%WG(Katana)</option>'+
+                            '<option id="drp" value="GIBL">GiberallicAcid0.001%L</option>'+
+                            '<option id="drp" value="GIB4">Gibreallic40%WSG</option>'+
+                            '<option id="drp" value="SEMP">HalosulfronMethyl75%WG(Sempra)</option>'+      
+                            '<option id="drp" value="HEX5">Hexaconazle5%SC</option>'+   
+                            '<option id="drp" value="HEXZ">Hexaconazle+Zineb(Avatar)</option>'+   
+                            '<option id="drp" value="IM17">Imidia17.8%SL</option>'+      
+                            '<option id="drp" value="IM30">Imida30.5%SC</option>'+  
+                            '<option id="drp" value="IM70">Imidia70%WG</option>'+  
+                            '<option id="drp" value="INDX">Indoxcarb14.5SC(Kento)</option>'+  
+                            '<option id="drp" value="KANG">Iprovalicarb+propineb(Kangeki)</option>'+   
                             '<option id="text" value="999">text...</option>'+                            
                             '<option id="none"value="0">None</option>'+
                             '</select> '+
