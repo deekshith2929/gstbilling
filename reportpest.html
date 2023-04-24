@@ -323,6 +323,8 @@
         const tdate=new Date(localStorage.getItem("todate"));
         document.getElementById("fromdate").innerHTML=frmdate.toLocaleString().split(',')[0];
         document.getElementById("todate").innerHTML=tdate.toLocaleString().split(',')[0];
+      //  var count=1;
+       // var field=0;
         for(var i=1;i<31;i++){
         var product=localStorage.getItem("products"+i);
         var producttext=localStorage.getItem("productstext"+i);
@@ -342,7 +344,7 @@
         case 'CRP7':  document.getElementById("pname"+i).innerHTML=  "Cartap Hydrochloride 75% SP";break;
         case 'CLR2':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 20% EC";break;
         case 'CLR5':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 50% EC";break;
-        case 'CCYP':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 50% EC + Cypermethrin 5% EC";break;
+        case 'CCYP':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 50% + Cypermethrin 5% EC";break;
         case 'CHLR':  document.getElementById("pname"+i).innerHTML=  "Chlorothalonil 75 % WP";break;
         case 'COCC':  document.getElementById("pname"+i).innerHTML=  "Copper Oxychloride 50% WP";break;
         case 'CYM4':  document.getElementById("pname"+i).innerHTML=  "Cymoxanil 8% + Mancozeb 64% WP";break;
@@ -363,11 +365,40 @@
         case 'SEMP':  document.getElementById("pname"+i).innerHTML=  "Halosulfuron Methyl 75% WG";break;
         case 'HEX5':  document.getElementById("pname"+i).innerHTML=  "Hexaconazole 5% SC";break;
         case 'HEXZ':  document.getElementById("pname"+i).innerHTML=  "Hexaconazole 4% + Zineb 68% WP";break;
+        case 'IMZE':  document.getElementById("pname"+i).innerHTML=  "Imazethapyr 10%";break;
         case 'IM17':  document.getElementById("pname"+i).innerHTML=  "Imidacloprid 17.8% SL";break;
         case 'IM30':  document.getElementById("pname"+i).innerHTML=  "Imidacloprid 30.5% SC";break;
         case 'IM70':  document.getElementById("pname"+i).innerHTML=  "Imidacloprid 70% WG";break;
         case 'INDX':  document.getElementById("pname"+i).innerHTML=  "Indoxcarb 14.5% SC";break;
         case 'KANG':  document.getElementById("pname"+i).innerHTML=  "Iprovalicarb 5.5% + Propineb 61.25% WP";break;
+        case 'LMD2':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 2.5% EC";break;
+        case 'LMD5':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 5% EC";break;
+        case 'INVO':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 4% + Imidacloprid 6% SL";break;
+        case 'LAYR':  document.getElementById("pname"+i).innerHTML=  "Layer";break;//tocheck
+        case 'M-45':  document.getElementById("pname"+i).innerHTML=  "Mancozeb 75% WP";break;
+        case 'METL':  document.getElementById("pname"+i).innerHTML=  "Metalaxyl 35% WP";break;
+        case 'MEM4':  document.getElementById("pname"+i).innerHTML=  "Metalxyl 8% + Mancozeb 64% WP";break;
+        case 'METR':  document.getElementById("pname"+i).innerHTML=  "Metribuzin 70% WP";break;
+        case 'MYCL':  document.getElementById("pname"+i).innerHTML=  "Myclobutanil 10% WP";break;
+        case 'PRAQ':  document.getElementById("pname"+i).innerHTML=  "Paraquat Dichloride 24% SL";break;
+        case 'PEND':  document.getElementById("pname"+i).innerHTML=  "Pendimethalin 30% EC";break;
+        case 'PNDC':  document.getElementById("pname"+i).innerHTML=  "Penimetthalin 38.7% SC";break;
+        case 'PROF':  document.getElementById("pname"+i).innerHTML=  "Profenophos 50% EC";break;
+        case 'PRCY':  document.getElementById("pname"+i).innerHTML=  "Profenophos 40% + Cypermethrin 5% EC";break;
+        case 'PRPG':  document.getElementById("pname"+i).innerHTML=  "Propargite 57% EC";break;
+        case 'PROP':  document.getElementById("pname"+i).innerHTML=  "Propineb 70% WP";break;
+        case 'PREE':  document.getElementById("pname"+i).innerHTML=  "Pretilachlor 50% EC";break;
+        case 'PREW':  document.getElementById("pname"+i).innerHTML=  "Pretilachlor 37% EW";break;
+        case 'SILC':  document.getElementById("pname"+i).innerHTML=  "";break;//tocheck
+        case 'SPRI':  document.getElementById("pname"+i).innerHTML=  "Spiromesifen 22.9% SC";break;
+        case 'SULP':  document.getElementById("pname"+i).innerHTML=  "Sulphur 80% WDG";break;
+        case 'SULC':  document.getElementById("pname"+i).innerHTML=  "Tebuconazole 10% + Sulphur 65% WG";break;
+        case 'THI2':  document.getElementById("pname"+i).innerHTML=  "Thiomethoxam 25% WG";break;
+        case 'THI3':  document.getElementById("pname"+i).innerHTML=  "Thiomethoxam 30% FS";break;
+        case 'THI7':  document.getElementById("pname"+i).innerHTML=  "Thiomethoxam 75% SG";break;
+        case 'THIO':  document.getElementById("pname"+i).innerHTML=  "Thiophante Methyl 70% WP";break;
+        case 'TYCH':  document.getElementById("pname"+i).innerHTML=  "Tolfenpyrad 15% EC";break;
+        case 'TRIC':  document.getElementById("pname"+i).innerHTML=  "Tricylazole 75% WP";break;
         case '999' :   document.getElementById("pname"+i).innerHTML=  producttext;break;    
         }
         document.getElementById("sno"+i).innerHTML=i;
@@ -394,7 +425,9 @@
         else
         {
         document.getElementById("closbrep"+i).innerHTML= clsb;    
-        }   
+        }
+        // if(count>2)
+        // document.getElementById("duplicate").innerHTML = field + "already entered";
      }
      
     </script>
