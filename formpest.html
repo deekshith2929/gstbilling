@@ -15,15 +15,20 @@
         background-color:antiquewhite;
       }
       input,select{
-    width:100px;
-    background-color: lightyellow;
-    border-radius: 20px;
-  }
-         footer {
+      width:70px;
+      background-color: lightyellow;
+      border-radius: 20px;
+     }
+    button{
+      width:70px;
+      background-color: lightgreen;
+      color: blue;
+      border-radius: 20px;
+     }
+     footer {
     text-align: center;
     background-color: DarkSalmon;
     color: white;
-
     padding: 10px 10px 0px 10px;
     bottom: 0;
     width: 100%;
@@ -33,11 +38,71 @@
 <body>
   <center><h1 style="color: blue;">Pesticide Stock Report</h1></center>  
     <form id="Items" method="post" action="reportpest.html">
-    
-        <center><h1>Under Construction.........</h1></center>
-    </br></br></br><footer> By Puvvadi Deekshith</footer>
+      From<input type="date" id="fromdate"> To <input type="date" id="todate"><br>
+  <center><br><button type="submit" name="submitvalues" value="Submit" onclick=calculate()>Submit</button><br/><br/></center>
+     </form>
+     
 </body>
 <script>
-
+  function myFunction() {
+var x = document.getElementById("products1").value;
+document.getElementById("producttext").value = x;
+  }
+    for (var i=1;i<31;i++){
+      if(i<10){
+        document.body.innerHTML +=   '<label class="ItemLabel">'+i+'&nbsp;&nbsp;</label>&nbsp;&nbsp&nbsp';
+      }
+      else{
+        document.body.innerHTML +=   '<label class="ItemLabel">'+i+'</label>&nbsp;&nbsp ';
+      }
+        document.body.innerHTML +=                    ' <select class="productsname" name="Item'+i+'" id="products'+i+'">'+
+                            '<option id="none" value="0">Select..</option>'+
+                            '<option id="drp" value="1">Acetamiprid20%SP</option>   '+    
+                            '<option id="drp" value="2">Acephate75%SP'+   
+                            '<option id="drp" value="2">Alpha 10%</option>'+
+                            '<option id="drp" value="3">Azaxy+Tebuconazole(Custodia)</option>'+
+                            '<option id="drp" value="4">Bifenthrin10%EC</option>'+
+                            '<option id="drp" value="5">Boscalid+Pyraclostribn(Rainbow)</option>'+
+                            '<option id="drp" value="6">Buprofezin+Acephate(Unione)</option>'+
+                            '<option id="drp" value="7">Carbendazim50%WP</option>'+
+                            '<option id="drp" value="8">Carbendazim+M45(Saaf)</option>'+
+                            '<option id="drp" value="9">Cartap50%SP</option>'+
+                            '<option id="drp" value="10">Cartap75%SP</option>'+
+                            '<option id="drp" value="11">Chloro20%EC</option>'+
+                            '<option id="drp" value="12">Chloro50%EC</option>'+
+                            '<option id="drp" value="13">Chloro+Cyper(Chandika)</option>'+
+                            '<option id="drp" value="14">Chloro+Cyper(Chandika)</option>'+
+                            '<option id="drp" value="15">Chlorothalonil75%WP</option>'+
+                            '<option id="drp" value="16">Copperoxychloride(Biltox)</option>'+
+                            '<option id="drp" value="17">Cymoxanil+M45</option>'+
+                            '<option id="drp" value="18">Deltamethrin11%EC</option>'+
+                            '<option id="drp" value="19">Difenoconazole25%EC</option>'+
+                            '<option id="drp" value="20">Difenocanzole+M45(Dimoxa)</option>'+
+                            '<option id="drp" value="21">Difenthurion50%WP</option>'+
+                            '<option id="drp" value="22">Dinotefuran20%SG(Token)</option>'+
+                            '<option id="drp" value="23">EmamcetinBenzoate5%SG</option>'+
+                            '<option id="drp" value="24">Fenpyroximate5%EC(Akio)</option>'+
+                            '<option id="drp" value="25">Fipronil5%SC</option>'+
+                            '<option id="drp" value="24">Fipronil40+Imidia40%</option>'+
+                            '<option id="drp" value="25">Fipronil80%WG(Jump)</option>'+
+                            '<option id="drp" value="26">Flubendiamide20%WG(Katana)</option>'+
+                            '<option id="drp" value="27">GiberallicAcid%SL</option>'+
+                            '<option id="drp" value="28">Gibreallicpowder</option>'+
+                            '<option id="drp" value="29">HalosulfronMethyl75%WG(Sempra)</option>'+      
+                            '<option id="drp" value="30">Hexaconazle5%SC</option>'+   
+                            '<option id="drp" value="31">Hexaconazle+Zineb(Avatar)</option>'+   
+                            '<option id="drp" value="32">Imidia17.8%SL</option>'+      
+                            '<option id="drp" value="32">Imida30.5%SC</option>'+  
+                            '<option id="drp" value="33">Imidia70%WG</option>'+  
+                            '<option id="drp" value="34">Indoxcarb14.5SC(Kento)</option>'+       
+                            '<option id="text" value="999">text...</option>'+                            
+                            '<option id="none"value="0">None</option>'+
+                            '</select> '+
+                            '<input type="number" step="0.001" id="opbalance'+i+'" placeholder="O/p balance" >&nbsp;'+
+                            '<input type="number" step="0.001" id="recp'+i+'" placeholder="Receipts">&nbsp; '+
+                            '<input type="number" step="0.001" id="sales'+i+'" placeholder="Sales">&nbsp;'+
+                            '<input type="text"  id="productstext'+i+'" placeholder="productname">&nbsp<br>';
+    }
+    document.body.innerHTML +=  '</br></br></br><footer> By Puvvadi Deekshith</footer>'; 
 </script>
 </html>
