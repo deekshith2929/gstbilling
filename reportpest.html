@@ -313,93 +313,164 @@
             <td><span id="closbrep30"></span></td>
         </tr> 
         </table>
-        <span id="duplicate"></span>
+        <span id="duplicate" style="color: red;"></span>
         <br>
           <button onclick="window.print()">Print</button>
           </center>
     </body>
 
     <script>
+        var field =[];
+        for(var k=0;k<70;k++){
+            field[k]=0;
+        }
         const frmdate=new Date(localStorage.getItem("fromdate"));
         const tdate=new Date(localStorage.getItem("todate"));
         document.getElementById("fromdate").innerHTML=frmdate.toLocaleString().split(',')[0];
         document.getElementById("todate").innerHTML=tdate.toLocaleString().split(',')[0];
-        
-        for(var i=1;i<31;i++){
-           
+        for(var i=1;i<31;i++){  
         var product=localStorage.getItem("products"+i);
         var producttext=localStorage.getItem("productstext"+i);
         switch(product) {
         case '0':  document.getElementById("tr"+i).style.display="none";break; 
-        case 'ACTP':  document.getElementById("pname"+i).innerHTML=  "Acetamiprid 20% SP";break;  
-        case 'ACEP':  document.getElementById("pname"+i).innerHTML=  "Acephate 75% SP";break;  
-        case 'ALPH':  document.getElementById("pname"+i).innerHTML=  "Alphamethrin 10% EC";break;  
-        case 'CUST':  document.getElementById("pname"+i).innerHTML=  "Azoxystrobin 18.2% + Difenoconazole 11.4% SC";break;  
-        case 'DIAZ':  document.getElementById("pname"+i).innerHTML=  "Azoxystrobin 11% + Tebuconazole 18.3% SC";break;  
-        case 'BIFE':  document.getElementById("pname"+i).innerHTML=  "Bifenthrin 10% EC";break;
-        case 'RINB':  document.getElementById("pname"+i).innerHTML=  "Boscalid 25.2% + Pyraclostrobin 12.8% WG";break;
-        case 'UNIN':  document.getElementById("pname"+i).innerHTML=  "Buprofezin 15% + Acephate 35% WP";break;
-        case 'CARB':  document.getElementById("pname"+i).innerHTML=  "Carbendazim 50% WP";break;  
-        case 'SAAF':  document.getElementById("pname"+i).innerHTML=  "Carbendazim 12% + Mancozeb 63% WP";break;
-        case 'CRP5':  document.getElementById("pname"+i).innerHTML=  "Cartap Hydrochloride 50% SP";break;
-        case 'CRP7':  document.getElementById("pname"+i).innerHTML=  "Cartap Hydrochloride 75% SP";break;
-        case 'CLR2':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 20% EC";break;
-        case 'CLR5':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 50% EC";break;
-        case 'CCYP':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 50% + Cypermethrin 5% EC";break;
-        case 'CHLR':  document.getElementById("pname"+i).innerHTML=  "Chlorothalonil 75 % WP";break;
-        case 'COCC':  document.getElementById("pname"+i).innerHTML=  "Copper Oxychloride 50% WP";break;
-        case 'CYM4':  document.getElementById("pname"+i).innerHTML=  "Cymoxanil 8% + Mancozeb 64% WP";break;
-        case 'CYPR':  document.getElementById("pname"+i).innerHTML=  "Cypermethrin 25% EC";break;
-        case 'DELT':  document.getElementById("pname"+i).innerHTML=  "Deltamethrin 11% EC";break;
-        case 'SCRO':  document.getElementById("pname"+i).innerHTML=  "Difenoconazole 25% EC";break;
-        case 'DIMO':  document.getElementById("pname"+i).innerHTML=  "Difenoconazole 25%  + Mancozeb 50% WDG";break;
-        case 'WISH':  document.getElementById("pname"+i).innerHTML=  "Difenthurion 50 % WP";break;
-        case 'TOKE':  document.getElementById("pname"+i).innerHTML=  "Dinotefuran 20 % SG";break;
-        case 'EMAT':  document.getElementById("pname"+i).innerHTML=  "Emamectin Benzoate 5% SG";break;
-        case 'AKIO':  document.getElementById("pname"+i).innerHTML=  "Fenpyroximate 5% EC";break;
-        case 'FIPR':  document.getElementById("pname"+i).innerHTML=  "Fipronil 5% SC";break;
-        case 'FIPI':  document.getElementById("pname"+i).innerHTML=  "Fipronil 40% + Imidacloprid 40% WG";break;
-        case 'JUMP':  document.getElementById("pname"+i).innerHTML=  "Fipronil 80% WG";break;
-        case 'KATA':  document.getElementById("pname"+i).innerHTML=  "Flubendiamide 20% WG";break;
-        case 'GIBL':  document.getElementById("pname"+i).innerHTML=  "Gibberellic Acid 0.001% L";break;
-        case 'GIB4':  document.getElementById("pname"+i).innerHTML=  "Gibberellic Acid 40 % WSG";break;
-        case 'SEMP':  document.getElementById("pname"+i).innerHTML=  "Halosulfuron Methyl 75% WG";break;
-        case 'HEX5':  document.getElementById("pname"+i).innerHTML=  "Hexaconazole 5% SC";break;
-        case 'HEXZ':  document.getElementById("pname"+i).innerHTML=  "Hexaconazole 4% + Zineb 68% WP";break;
-        case 'IMZE':  document.getElementById("pname"+i).innerHTML=  "Imazethapyr 10%";break;
-        case 'IM17':  document.getElementById("pname"+i).innerHTML=  "Imidacloprid 17.8% SL";break;
-        case 'IM30':  document.getElementById("pname"+i).innerHTML=  "Imidacloprid 30.5% SC";break;
-        case 'IM70':  document.getElementById("pname"+i).innerHTML=  "Imidacloprid 70% WG";break;
-        case 'INDX':  document.getElementById("pname"+i).innerHTML=  "Indoxcarb 14.5% SC";break;
-        case 'KANG':  document.getElementById("pname"+i).innerHTML=  "Iprovalicarb 5.5% + Propineb 61.25% WP";break;
-        case 'LMD2':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 2.5% EC";break;
-        case 'LMD5':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 5% EC";break;
-        case 'INVO':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 4% + Imidacloprid 6% SL";break;
-        case 'LAYR':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 9.5% + Thiomethoxam 12.6%";break;
-        case 'M-45':  document.getElementById("pname"+i).innerHTML=  "Mancozeb 75% WP";break;
-        case 'METL':  document.getElementById("pname"+i).innerHTML=  "Metalaxyl 35% WP";break;
-        case 'MEM4':  document.getElementById("pname"+i).innerHTML=  "Metalxyl 8% + Mancozeb 64% WP";break;
-        case 'METR':  document.getElementById("pname"+i).innerHTML=  "Metribuzin 70% WP";break;
-        case 'MYCL':  document.getElementById("pname"+i).innerHTML=  "Myclobutanil 10% WP";break;
-        case 'PRAQ':  document.getElementById("pname"+i).innerHTML=  "Paraquat Dichloride 24% SL";break;
-        case 'PEND':  document.getElementById("pname"+i).innerHTML=  "Pendimethalin 30% EC";break;
-        case 'PNDC':  document.getElementById("pname"+i).innerHTML=  "Penimetthalin 38.7% SC";break;
-        case 'PROF':  document.getElementById("pname"+i).innerHTML=  "Profenophos 50% EC";break;
-        case 'PRCY':  document.getElementById("pname"+i).innerHTML=  "Profenophos 40% + Cypermethrin 5% EC";break;
-        case 'PRPG':  document.getElementById("pname"+i).innerHTML=  "Propargite 57% EC";break;
-        case 'PROP':  document.getElementById("pname"+i).innerHTML=  "Propineb 70% WP";break;
-        case 'PREE':  document.getElementById("pname"+i).innerHTML=  "Pretilachlor 50% EC";break;
-        case 'PREW':  document.getElementById("pname"+i).innerHTML=  "Pretilachlor 37% EW";break;
-        case 'SILC':  document.getElementById("pname"+i).innerHTML=  "Silicon Surfactant";break;
-        case 'SPRI':  document.getElementById("pname"+i).innerHTML=  "Spiromesifen 22.9% SC";break;
-        case 'SULP':  document.getElementById("pname"+i).innerHTML=  "Sulphur 80% WDG";break;
-        case 'SULC':  document.getElementById("pname"+i).innerHTML=  "Tebuconazole 10% + Sulphur 65% WG";break;
-        case 'THI2':  document.getElementById("pname"+i).innerHTML=  "Thiomethoxam 25% WG";break;
-        case 'THI3':  document.getElementById("pname"+i).innerHTML=  "Thiomethoxam 30% FS";break;
-        case 'THI7':  document.getElementById("pname"+i).innerHTML=  "Thiomethoxam 75% SG";break;
-        case 'THIO':  document.getElementById("pname"+i).innerHTML=  "Thiophante Methyl 70% WP";break;
-        case 'TYCH':  document.getElementById("pname"+i).innerHTML=  "Tolfenpyrad 15% EC";break;
-        case 'TRIC':  document.getElementById("pname"+i).innerHTML=  "Tricylazole 75% WP";break;
+        case 'ACTP':  document.getElementById("pname"+i).innerHTML=  "Acetamiprid 20% SP";
+        field[1]++;if(field[1]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[1]+" Entries pls check!!<br>";break;  
+        case 'ACEP':  document.getElementById("pname"+i).innerHTML=  "Acephate 75% SP";
+        field[2]++;if(field[2]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[2]+" Entries pls check!!<br>";break;   
+        case 'ALPH':  document.getElementById("pname"+i).innerHTML=  "Alphamethrin 10% EC";
+        field[3]++;if(field[3]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[3]+" Entries pls check!!<br>";break;   
+        case 'CUST':  document.getElementById("pname"+i).innerHTML=  "Azoxystrobin 18.2% + Difenoconazole 11.4% SC";
+        field[4]++;if(field[4]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[4]+" Entries pls check!!<br>";break; 
+        case 'DIAZ':  document.getElementById("pname"+i).innerHTML=  "Azoxystrobin 11% + Tebuconazole 18.3% SC";
+        field[5]++;if(field[5]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[5]+" Entries pls check!!<br>";break;  
+        case 'BIFE':  document.getElementById("pname"+i).innerHTML=  "Bifenthrin 10% EC";
+        field[6]++;if(field[6]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[6]+" Entries pls check!!<br>";break;
+        case 'RINB':  document.getElementById("pname"+i).innerHTML=  "Boscalid 25.2% + Pyraclostrobin 12.8% WG";
+        field[7]++;if(field[7]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[7]+" Entries pls check!!<br>";break;
+        case 'UNIN':  document.getElementById("pname"+i).innerHTML=  "Buprofezin 15% + Acephate 35% WP";
+        field[8]++;if(field[8]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[8]+" Entries pls check!!<br>";break;
+        case 'CARB':  document.getElementById("pname"+i).innerHTML=  "Carbendazim 50% WP"; 
+        field[9]++;if(field[9]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[9]+" Entries pls check!!<br>";break;
+        case 'SAAF':  document.getElementById("pname"+i).innerHTML=  "Carbendazim 12% + Mancozeb 63% WP";
+        field[10]++;if(field[10]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[10]+" Entries pls check!!<br>";break;
+        case 'CRP5':  document.getElementById("pname"+i).innerHTML=  "Cartap Hydrochloride 50% SP";
+        field[11]++;if(field[11]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[11]+" Entries pls check!!<br>";break;
+        case 'CRP7':  document.getElementById("pname"+i).innerHTML=  "Cartap Hydrochloride 75% SP";
+        field[12]++;if(field[12]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[12]+" Entries pls check!!<br>";break;
+        case 'CLR2':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 20% EC";
+        field[13]++;if(field[13]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[13]+" Entries pls check!!<br>";break;
+        case 'CLR5':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 50% EC";
+        field[14]++;if(field[14]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[14]+" Entries pls check!!<br>";break;
+        case 'CCYP':  document.getElementById("pname"+i).innerHTML=  "Chloropyriphos 50% + Cypermethrin 5% EC";
+        field[15]++;if(field[15]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[15]+" Entries pls check!!<br>";break;
+        case 'CHLR':  document.getElementById("pname"+i).innerHTML=  "Chlorothalonil 75 % WP";
+        field[16]++;if(field[16]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[16]+" Entries pls check!!<br>";break;
+        case 'COCC':  document.getElementById("pname"+i).innerHTML=  "Copper Oxychloride 50% WP";
+        field[17]++;if(field[17]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[17]+" Entries pls check!!<br>";break;
+        case 'CYM4':  document.getElementById("pname"+i).innerHTML=  "Cymoxanil 8% + Mancozeb 64% WP";
+        field[18]++;if(field[18]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[18]+" Entries pls check!!<br>";break;
+        case 'CYPR':  document.getElementById("pname"+i).innerHTML=  "Cypermethrin 25% EC";
+        field[19]++;if(field[19]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[19]+" Entries pls check!!<br>";break;
+        case 'DELT':  document.getElementById("pname"+i).innerHTML=  "Deltamethrin 11% EC";
+        field[20]++;if(field[20]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[20]+" Entries pls check!!<br>";break;
+        case 'SCRO':  document.getElementById("pname"+i).innerHTML=  "Difenoconazole 25% EC";
+        field[21]++;if(field[21]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[21]+" Entries pls check!!<br>";break;
+        case 'DIMO':  document.getElementById("pname"+i).innerHTML=  "Difenoconazole 25%  + Mancozeb 50% WDG";
+        field[22]++;if(field[22]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[22]+" Entries pls check!!<br>";break;
+        case 'WISH':  document.getElementById("pname"+i).innerHTML=  "Difenthurion 50 % WP";
+        field[23]++;if(field[23]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[23]+" Entries pls check!!<br>";break;
+        case 'TOKE':  document.getElementById("pname"+i).innerHTML=  "Dinotefuran 20 % SG";
+        field[24]++;if(field[24]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[24]+" Entries pls check!!<br>";break;
+        case 'EMAT':  document.getElementById("pname"+i).innerHTML=  "Emamectin Benzoate 5% SG";
+        field[25]++;if(field[25]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[25]+" Entries pls check!!<br>";break;
+        case 'AKIO':  document.getElementById("pname"+i).innerHTML=  "Fenpyroximate 5% EC";
+        field[26]++;if(field[26]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[26]+" Entries pls check!!<br>";break;
+        case 'FIPR':  document.getElementById("pname"+i).innerHTML=  "Fipronil 5% SC";
+        field[27]++;if(field[27]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[27]+" Entries pls check!!<br>";break;
+        case 'FIPI':  document.getElementById("pname"+i).innerHTML=  "Fipronil 40% + Imidacloprid 40% WG";
+        field[28]++;if(field[28]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[28]+" Entries pls check!!<br>";break;
+        case 'JUMP':  document.getElementById("pname"+i).innerHTML=  "Fipronil 80% WG";
+        field[29]++;if(field[29]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[29]+" Entries pls check!!<br>";break;
+        case 'KATA':  document.getElementById("pname"+i).innerHTML=  "Flubendiamide 20% WG";
+        field[30]++;if(field[30]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[30]+" Entries pls check!!<br>";break;
+        case 'GIBL':  document.getElementById("pname"+i).innerHTML=  "Gibberellic Acid 0.001% L";
+        field[31]++;if(field[31]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[31]+" Entries pls check!!<br>";break;
+        case 'GIB4':  document.getElementById("pname"+i).innerHTML=  "Gibberellic Acid 40 % WSG";
+        field[32]++;if(field[32]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[32]+" Entries pls check!!<br>";break;
+        case 'SEMP':  document.getElementById("pname"+i).innerHTML=  "Halosulfuron Methyl 75% WG";
+        field[33]++;if(field[33]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[33]+" Entries pls check!!<br>";break;
+        case 'HEX5':  document.getElementById("pname"+i).innerHTML=  "Hexaconazole 5% SC";
+        field[34]++;if(field[34]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[34]+" Entries pls check!!<br>";break;
+        case 'HEXZ':  document.getElementById("pname"+i).innerHTML=  "Hexaconazole 4% + Zineb 68% WP";
+        field[35]++;if(field[35]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[35]+" Entries pls check!!<br>";break;
+        case 'IMZE':  document.getElementById("pname"+i).innerHTML=  "Imazethapyr 10%";
+        field[36]++;if(field[36]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[36]+" Entries pls check!!<br>";break;
+        case 'IM17':  document.getElementById("pname"+i).innerHTML=  "Imidacloprid 17.8% SL";
+        field[37]++;if(field[37]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[37]+" Entries pls check!!<br>";break;
+        case 'IM30':  document.getElementById("pname"+i).innerHTML=  "Imidacloprid 30.5% SC";
+        field[38]++;if(field[38]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[38]+" Entries pls check!!<br>";break;
+        case 'IM70':  document.getElementById("pname"+i).innerHTML=  "Imidacloprid 70% WG";
+        field[39]++;if(field[39]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[39]+" Entries pls check!!<br>";break;
+        case 'INDX':  document.getElementById("pname"+i).innerHTML=  "Indoxcarb 14.5% SC";
+        field[40]++;if(field[40]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[40]+" Entries pls check!!<br>";break;
+        case 'KANG':  document.getElementById("pname"+i).innerHTML=  "Iprovalicarb 5.5% + Propineb 61.25% WP";
+        field[41]++;if(field[41]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[41]+" Entries pls check!!<br>";break;
+        case 'LMD2':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 2.5% EC";
+        field[42]++;if(field[42]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[42]+" Entries pls check!!<br>";break;
+        case 'LMD5':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 5% EC";
+        field[43]++;if(field[43]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[43]+" Entries pls check!!<br>";break;
+        case 'INVO':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 4% + Imidacloprid 6% SL";
+        field[44]++;if(field[44]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[44]+" Entries pls check!!<br>";break;
+        case 'LAYR':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 9.5% + Thiomethoxam 12.6%";
+        field[45]++;if(field[45]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[45]+" Entries pls check!!<br>";break;
+        case 'M-45':  document.getElementById("pname"+i).innerHTML=  "Mancozeb 75% WP";
+        field[46]++;if(field[46]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[46]+" Entries pls check!!<br>";break;
+        case 'METL':  document.getElementById("pname"+i).innerHTML=  "Metalaxyl 35% WP";
+        field[47]++;if(field[47]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[47]+" Entries pls check!!<br>";break;
+        case 'MEM4':  document.getElementById("pname"+i).innerHTML=  "Metalxyl 8% + Mancozeb 64% WP";
+        field[48]++;if(field[48]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[48]+" Entries pls check!!<br>";break;
+        case 'METR':  document.getElementById("pname"+i).innerHTML=  "Metribuzin 70% WP";
+        field[49]++;if(field[49]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[49]+" Entries pls check!!<br>";break;
+        case 'MYCL':  document.getElementById("pname"+i).innerHTML=  "Myclobutanil 10% WP";
+        field[50]++;if(field[50]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[50]+" Entries pls check!!<br>";break;
+        case 'PRAQ':  document.getElementById("pname"+i).innerHTML=  "Paraquat Dichloride 24% SL";
+        field[51]++;if(field[51]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[51]+" Entries pls check!!<br>";break;
+        case 'PEND':  document.getElementById("pname"+i).innerHTML=  "Pendimethalin 30% EC";
+        field[52]++;if(field[52]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[52]+" Entries pls check!!<br>";break;
+        case 'PNDC':  document.getElementById("pname"+i).innerHTML=  "Penimetthalin 38.7% SC";
+        field[53]++;if(field[53]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[53]+" Entries pls check!!<br>";break;
+        case 'PROF':  document.getElementById("pname"+i).innerHTML=  "Profenophos 50% EC";
+        field[54]++;if(field[54]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[54]+" Entries pls check!!<br>";break;
+        case 'PRCY':  document.getElementById("pname"+i).innerHTML=  "Profenophos 40% + Cypermethrin 5% EC";
+        field[55]++;if(field[55]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[55]+" Entries pls check!!<br>";break;
+        case 'PRPG':  document.getElementById("pname"+i).innerHTML=  "Propargite 57% EC";
+        field[56]++;if(field[56]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[56]+" Entries pls check!!<br>";break;
+        case 'PROP':  document.getElementById("pname"+i).innerHTML=  "Propineb 70% WP";
+        field[57]++;if(field[57]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[57]+" Entries pls check!!<br>";break;
+        case 'PREE':  document.getElementById("pname"+i).innerHTML=  "Pretilachlor 50% EC";
+        field[58]++;if(field[58]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[58]+" Entries pls check!!<br>";break;
+        case 'PREW':  document.getElementById("pname"+i).innerHTML=  "Pretilachlor 37% EW";
+        field[59]++;if(field[59]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[59]+" Entries pls check!!<br>";break;
+        case 'SILC':  document.getElementById("pname"+i).innerHTML=  "Silicon Surfactant";
+        field[60]++;if(field[60]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[60]+" Entries pls check!!<br>";break;
+        case 'SPRI':  document.getElementById("pname"+i).innerHTML=  "Spiromesifen 22.9% SC";
+        field[61]++;if(field[61]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[61]+" Entries pls check!!<br>";break;
+        case 'SULP':  document.getElementById("pname"+i).innerHTML=  "Sulphur 80% WDG";
+        field[62]++;if(field[62]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[62]+" Entries pls check!!<br>";break;
+        case 'SULC':  document.getElementById("pname"+i).innerHTML=  "Tebuconazole 10% + Sulphur 65% WG";
+        field[63]++;if(field[63]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[63]+" Entries pls check!!<br>";break;
+        case 'THI2':  document.getElementById("pname"+i).innerHTML=  "Thiomethoxam 25% WG";
+        field[64]++;if(field[64]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[64]+" Entries pls check!!<br>";break;
+        case 'THI3':  document.getElementById("pname"+i).innerHTML=  "Thiomethoxam 30% FS";
+        field[65]++;if(field[65]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[65]+" Entries pls check!!<br>";break;
+        case 'THI7':  document.getElementById("pname"+i).innerHTML=  "Thiomethoxam 75% SG";
+        field[66]++;if(field[66]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[66]+" Entries pls check!!<br>";break;
+        case 'THIO':  document.getElementById("pname"+i).innerHTML=  "Thiophante Methyl 70% WP";
+        field[67]++;if(field[67]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[67]+" Entries pls check!!<br>";break;
+        case 'TYCH':  document.getElementById("pname"+i).innerHTML=  "Tolfenpyrad 15% EC";
+        field[68]++;if(field[68]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[68]+" Entries pls check!!<br>";break;
+        case 'TRIC':  document.getElementById("pname"+i).innerHTML=  "Tricylazole 75% WP";
+        field[69]++;if(field[69]>=2)document.getElementById("duplicate").innerHTML+=i+" Row product has "+field[69]+" Entries pls check!!<br>";break;
         case '999' :   document.getElementById("pname"+i).innerHTML=  producttext;break;    
         }
         document.getElementById("sno"+i).innerHTML=i;
@@ -428,4 +499,7 @@
         document.getElementById("closbrep"+i).innerHTML= clsb;    
         }
      }
+     for(var k=1;k<31;k++){
+     console.log(document.getElementById("pname"+k).value);
+    }
     </script>
