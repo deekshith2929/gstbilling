@@ -313,6 +313,7 @@
             <td><span id="closbrep30"></span></td>
         </tr> 
         </table>
+        <span id="duplicate"></span>
         <br>
           <button onclick="window.print()">Print</button>
           </center>
@@ -323,16 +324,16 @@
         const tdate=new Date(localStorage.getItem("todate"));
         document.getElementById("fromdate").innerHTML=frmdate.toLocaleString().split(',')[0];
         document.getElementById("todate").innerHTML=tdate.toLocaleString().split(',')[0];
-      //  var count=1;
-       // var field=0;
+        
         for(var i=1;i<31;i++){
+           
         var product=localStorage.getItem("products"+i);
         var producttext=localStorage.getItem("productstext"+i);
         switch(product) {
         case '0':  document.getElementById("tr"+i).style.display="none";break; 
         case 'ACTP':  document.getElementById("pname"+i).innerHTML=  "Acetamiprid 20% SP";break;  
         case 'ACEP':  document.getElementById("pname"+i).innerHTML=  "Acephate 75% SP";break;  
-        case 'ALPH':  document.getElementById("pname"+i).innerHTML=  "Alphamethrin 10% EC";break;  
+        case 'ALPH':  document.getElementById("pname"+i).innerHTML=  "Alphamethrin 10% EC";field[3]++;break;  
         case 'CUST':  document.getElementById("pname"+i).innerHTML=  "Azoxystrobin 18.2% + Difenoconazole 11.4% SC";break;  
         case 'DIAZ':  document.getElementById("pname"+i).innerHTML=  "Azoxystrobin 11% + Tebuconazole 18.3% SC";break;  
         case 'BIFE':  document.getElementById("pname"+i).innerHTML=  "Bifenthrin 10% EC";break;
@@ -374,7 +375,7 @@
         case 'LMD2':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 2.5% EC";break;
         case 'LMD5':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 5% EC";break;
         case 'INVO':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 4% + Imidacloprid 6% SL";break;
-        case 'LAYR':  document.getElementById("pname"+i).innerHTML=  "Layer";break;//tocheck
+        case 'LAYR':  document.getElementById("pname"+i).innerHTML=  "LambdaCyhalothrin 9.5% + Thiomethoxam 12.6%";break;
         case 'M-45':  document.getElementById("pname"+i).innerHTML=  "Mancozeb 75% WP";break;
         case 'METL':  document.getElementById("pname"+i).innerHTML=  "Metalaxyl 35% WP";break;
         case 'MEM4':  document.getElementById("pname"+i).innerHTML=  "Metalxyl 8% + Mancozeb 64% WP";break;
@@ -389,7 +390,7 @@
         case 'PROP':  document.getElementById("pname"+i).innerHTML=  "Propineb 70% WP";break;
         case 'PREE':  document.getElementById("pname"+i).innerHTML=  "Pretilachlor 50% EC";break;
         case 'PREW':  document.getElementById("pname"+i).innerHTML=  "Pretilachlor 37% EW";break;
-        case 'SILC':  document.getElementById("pname"+i).innerHTML=  "";break;//tocheck
+        case 'SILC':  document.getElementById("pname"+i).innerHTML=  "Silicon Surfactant";break;
         case 'SPRI':  document.getElementById("pname"+i).innerHTML=  "Spiromesifen 22.9% SC";break;
         case 'SULP':  document.getElementById("pname"+i).innerHTML=  "Sulphur 80% WDG";break;
         case 'SULC':  document.getElementById("pname"+i).innerHTML=  "Tebuconazole 10% + Sulphur 65% WG";break;
@@ -426,8 +427,5 @@
         {
         document.getElementById("closbrep"+i).innerHTML= clsb;    
         }
-        // if(count>2)
-        // document.getElementById("duplicate").innerHTML = field + "already entered";
      }
-     
     </script>
