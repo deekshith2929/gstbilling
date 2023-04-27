@@ -264,7 +264,7 @@ document.getElementById("print").style.display="none";
         var recp=Number(localStorage.getItem("recp"+i));
         recp = (recp==='' || recp==null || recp==0 || isNaN(recp)) ? recp= '-' : parseFloat(recp).toFixed(3);
         document.getElementById("recprep"+i).innerHTML=recp;
-        var total=Number(op) + (isNaN(recp) ? 0 : Number(recp));
+        var total=(isNaN(op) ? 0 : Number(op))+ (isNaN(recp) ? 0 : Number(recp));
         total = (total==='' || total==null || isNaN(total)) ? total= '-' : parseFloat(total).toFixed(3);
         document.getElementById("totalrep"+i).innerHTML=total;
         var sales=Number(localStorage.getItem("sales"+i));
