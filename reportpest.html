@@ -311,8 +311,10 @@
             <td><span id="totalrep30"></span></td>
             <td><span id="salesrep30"></span></td>
             <td><span id="closbrep30"></span></td>
-        </tr> 
-        </table>
+        </tr>       
+    </table><br>
+    <img height="35" style="position: absolute;right: 450px;" src="sign.jpg"/><br><br>
+    <img height="65" style="position: absolute;right: 450px;" src="stampfert.jpeg"/>
         <span id="duplicate" style="color: red;"></span>
         <br>
   <button  id="print" onclick="window.print();disableprint();">Print</button>
@@ -328,8 +330,8 @@ document.getElementById("print").style.display="none";
         }
         const frmdate=new Date(localStorage.getItem("fromdate"));
         const tdate=new Date(localStorage.getItem("todate"));
-        document.getElementById("fromdate").innerHTML=frmdate.toLocaleString().split(',')[0];
-        document.getElementById("todate").innerHTML=tdate.toLocaleString().split(',')[0];
+        document.getElementById("fromdate").innerHTML=frmdate.toLocaleDateString('en-GB');
+        document.getElementById("todate").innerHTML=tdate.toLocaleDateString('en-GB');
         for(var i=1;i<31;i++){  
         var product=localStorage.getItem("products"+i);
         var producttext=localStorage.getItem("productstext"+i);

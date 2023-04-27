@@ -235,8 +235,8 @@ document.getElementById("print").style.display="none";
 }    
     const frmdate=new Date(localStorage.getItem("fromdate"));
         const tdate=new Date(localStorage.getItem("todate"));
-        document.getElementById("fromdate").innerHTML=frmdate.toLocaleString().split(',')[0];
-        document.getElementById("todate").innerHTML=tdate.toLocaleString().split(',')[0];
+        document.getElementById("fromdate").innerHTML=frmdate.toLocaleDateString('en-GB');
+        document.getElementById("todate").innerHTML=tdate.toLocaleDateString('en-GB');
         for(var i=1;i<21;i++){
         var product=Number(localStorage.getItem("products"+i));
         var producttext=localStorage.getItem("productstext"+i);
