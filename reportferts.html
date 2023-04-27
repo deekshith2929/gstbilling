@@ -224,12 +224,16 @@
         </tr> 
         </table>
         <br>
-          <button onclick="window.print()">Print</button>
+         
+<button  id="print" onclick="window.print();disableprint();">Print</button>
           </center>
     </body>
 
     <script>
-        const frmdate=new Date(localStorage.getItem("fromdate"));
+function disableprint(){
+document.getElementById("print").style.display="none";
+
+}        const frmdate=new Date(localStorage.getItem("fromdate"));
         const tdate=new Date(localStorage.getItem("todate"));
         document.getElementById("fromdate").innerHTML=frmdate.toLocaleString().split(',')[0];
         document.getElementById("todate").innerHTML=tdate.toLocaleString().split(',')[0];
