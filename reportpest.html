@@ -315,12 +315,15 @@
         </table>
         <span id="duplicate" style="color: red;"></span>
         <br>
-          <button onclick="window.print()">Print</button>
+<button  id="print" onclick="window.print();disableprint();">Print</button>
           </center>
     </body>
 
     <script>
-        var field =[];
+function disableprint(){
+document.getElementById("print").style.display="none";
+
+}        var field =[];
         for(var k=0;k<70;k++){
             field[k]=0;
         }
