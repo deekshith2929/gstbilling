@@ -232,8 +232,8 @@
     <script>
 function disableprint(){
 document.getElementById("print").style.display="none";
-
-}        const frmdate=new Date(localStorage.getItem("fromdate"));
+}    
+    const frmdate=new Date(localStorage.getItem("fromdate"));
         const tdate=new Date(localStorage.getItem("todate"));
         document.getElementById("fromdate").innerHTML=frmdate.toLocaleString().split(',')[0];
         document.getElementById("todate").innerHTML=tdate.toLocaleString().split(',')[0];
@@ -262,14 +262,14 @@ document.getElementById("print").style.display="none";
         var recp=Number(localStorage.getItem("recp"+i));
         recp = (recp==='' || recp==null || recp==0 || isNaN(recp)) ? recp= '-' : parseFloat(recp).toFixed(3);
         document.getElementById("recprep"+i).innerHTML=recp;
-        var total=Number(op)+Number(recp);
+        var total=Number(op) + (isNaN(recp) ? 0 : Number(recp));
         total = (total==='' || total==null || isNaN(total)) ? total= '-' : parseFloat(total).toFixed(3);
         document.getElementById("totalrep"+i).innerHTML=total;
         var sales=Number(localStorage.getItem("sales"+i));
         sales = (sales==='' || sales==null || sales==0 || isNaN(sales)) ? sales= '-' : parseFloat(sales).toFixed(3);
         document.getElementById("salesrep"+i).innerHTML=sales;
         sales = sales === '-' ?  0 : sales; 
-        var clsb=Number(total)-Number(sales);
+        var clsb=Number(total)- (isNaN(sales) ? 0 : Number(sales));
         clsb = (clsb==='' || clsb==null || isNaN(clsb) || clsb===0) ? clsb= '-' : parseFloat(clsb).toFixed(3);
         if(clsb<0)
         {

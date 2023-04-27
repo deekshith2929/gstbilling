@@ -40,7 +40,7 @@
         <th>Recepits</th>
         <th>Total</th>
         <th>Sales</th>       
-        <th>Closing Balance(ltr(s)/kg(s)</th>
+        <th>Closing Balance(ltr(s)/kg(s))</th>
         </tr>
         <tr id="tr1">
         <td><span id="sno1"></span></td>
@@ -315,15 +315,14 @@
         </table>
         <span id="duplicate" style="color: red;"></span>
         <br>
-<button  id="print" onclick="window.print();disableprint();">Print</button>
+  <button  id="print" onclick="window.print();disableprint();">Print</button>
           </center>
-    </body>
-
+        </body>
     <script>
 function disableprint(){
 document.getElementById("print").style.display="none";
-
-}        var field =[];
+}      
+    var field =[];
         for(var k=0;k<70;k++){
             field[k]=0;
         }
@@ -483,14 +482,14 @@ document.getElementById("print").style.display="none";
         var recp=Number(localStorage.getItem("recp"+i));
         recp = (recp==='' || recp==null || recp==0 || isNaN(recp)) ? recp= '-' : parseFloat(recp).toFixed(2);
         document.getElementById("recprep"+i).innerHTML=recp;
-        var total=Number(op)+Number(recp);
+        var total=Number(op) + (isNaN(recp) ? 0 : Number(recp));
         total = (total==='' || total==null || isNaN(total)) ? total= '-' : parseFloat(total).toFixed(2);
         document.getElementById("totalrep"+i).innerHTML=total;
         var sales=Number(localStorage.getItem("sales"+i));
         sales = (sales==='' || sales==null || sales==0 || isNaN(sales)) ? sales= '-' : parseFloat(sales).toFixed(2);
         document.getElementById("salesrep"+i).innerHTML=sales;
         sales = sales === '-' ?  0 : sales; 
-        var clsb=Number(total)-Number(sales);
+        var clsb=Number(total)- (isNaN(sales) ? 0 : Number(sales));
         clsb = (clsb==='' || clsb==null || isNaN(clsb) || clsb===0) ? clsb= '-' : parseFloat(clsb).toFixed(2);
         if(clsb<0)
         {
