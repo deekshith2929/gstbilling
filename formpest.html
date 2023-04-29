@@ -38,7 +38,11 @@
 <body>
   <center><h1 style="color: blue;">Pesticide Stock Report</h1></center>  
     <form  action="reportpest.html">
-      From<input type="date" id="fromdate"> To <input type="date" id="todate"><br>
+      From<input type="date" id="fromdate"> To <input type="date" id="todate">
+      <select id="stamp" style=" width:150px;">
+        <option value="stamp">With Stamp</option>
+        <option value="nostamp">Without Stamp</option>
+      </select>
   <center><br><button type="submit" name="submitvalues" value="Submit" onclick=calculate()>Submit</button><br/><br/></center>
      </form>
      
