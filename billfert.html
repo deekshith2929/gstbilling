@@ -108,7 +108,7 @@
   document.getElementById("othcount").innerHTML=localStorage.getItem("otheritemcount");
   document.getElementById("cgste").innerHTML=localStorage.getItem("cgstlocal");
   document.getElementById("sgste").innerHTML=localStorage.getItem("sgstlocal");
-  document.getElementById("totale").innerHTML=((localStorage.getItem("finalpricelocal")).toLocaleString('en-IN'));
+var ttlprx=localStorage.getItem("finalpricelocal"); document.getElementById("totale").innerHTML=(Number(ttlprx)).toLocaleString('en-IN');
 
   var a=localStorage.getItem("firstitemname");
   var b=localStorage.getItem("seconditemname");
