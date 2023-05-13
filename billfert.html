@@ -93,22 +93,23 @@
 
 
 
-  document.getElementById("netamount").innerHTML=localStorage.getItem("totallocal");
-  document.getElementById("firstans").innerHTML=localStorage.getItem("firstcostlocal");
-  document.getElementById("secondans").innerHTML=localStorage.getItem("secondcostlocal");
-  document.getElementById("thirdans").innerHTML=localStorage.getItem("thirdcostlocal");
-  document.getElementById("otherans").innerHTML=localStorage.getItem("othercostlocal");
-  document.getElementById("fircost").innerHTML=localStorage.getItem("firstitemcost");
-  document.getElementById("seccost").innerHTML=localStorage.getItem("seconditemcost");
-  document.getElementById("thrcost").innerHTML=localStorage.getItem("thirditemcost");
- document.getElementById("othcost").innerHTML=localStorage.getItem("otherzcostlocal");
+  document.getElementById("netamount").innerHTML=(Number(localStorage.getItem("totallocal"))).toLocaleString('en-IN');
+  document.getElementById("firstans").innerHTML=(Number(localStorage.getItem("firstcostlocal"))).toLocaleString('en-IN');
+  document.getElementById("secondans").innerHTML=(Number(localStorage.getItem("secondcostlocal"))).toLocaleString('en-IN');
+  document.getElementById("thirdans").innerHTML=(Number(localStorage.getItem("thirdcostlocal"))).toLocaleString('en-IN');
+  document.getElementById("otherans").innerHTML=(Number(localStorage.getItem("othercostlocal"))).toLocaleString('en-IN');
+  document.getElementById("fircost").innerHTML=(Number(localStorage.getItem("firstitemcost"))).toLocaleString('en-IN');
+  document.getElementById("seccost").innerHTML=(Number(localStorage.getItem("seconditemcost"))).toLocaleString('en-IN');
+  document.getElementById("thrcost").innerHTML=(Number(localStorage.getItem("thirditemcost"))).toLocaleString('en-IN');
+ document.getElementById("othcost").innerHTML=(Number(localStorage.getItem("otherzcostlocal"))).toLocaleString('en-IN');
   document.getElementById("fircount").innerHTML=localStorage.getItem("firstitemcount");
   document.getElementById("seccount").innerHTML=localStorage.getItem("seconditemcount");
   document.getElementById("thrcount").innerHTML=localStorage.getItem("thirditemcount");
   document.getElementById("othcount").innerHTML=localStorage.getItem("otheritemcount");
-  document.getElementById("cgste").innerHTML=localStorage.getItem("cgstlocal");
-  document.getElementById("sgste").innerHTML=localStorage.getItem("sgstlocal");
-var ttlprx=localStorage.getItem("finalpricelocal"); document.getElementById("totale").innerHTML=(Number(ttlprx)).toLocaleString('en-IN');
+  document.getElementById("cgste").innerHTML=(Number(localStorage.getItem("cgstlocal"))).toLocaleString('en-IN');
+  document.getElementById("sgste").innerHTML=(Number(localStorage.getItem("sgstlocal"))).toLocaleString('en-IN');
+var ttlprx=localStorage.getItem("finalpricelocal"); 
+document.getElementById("totale").innerHTML=(Number(ttlprx)).toLocaleString('en-IN');
 
   var a=localStorage.getItem("firstitemname");
   var b=localStorage.getItem("seconditemname");
