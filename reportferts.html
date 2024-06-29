@@ -236,6 +236,11 @@
 function disableprint(){
 document.getElementById("print").style.display="none";
 }    
+var stamp=localStorage.getItem("stamp");
+        if(stamp==='nostamp'){
+            document.getElementById("stampsign").style.display="none"; 
+        }
+        
     const frmdate=new Date(localStorage.getItem("fromdate"));
         const tdate=new Date(localStorage.getItem("todate"));
         document.getElementById("fromdate").innerHTML=frmdate.toLocaleDateString('en-GB');
